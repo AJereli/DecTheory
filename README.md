@@ -1,0 +1,2 @@
+# DecTheory
+Decision theory labs 
