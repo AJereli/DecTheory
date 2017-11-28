@@ -1,5 +1,5 @@
 # DecTheory
-Decision theory labs:
+Decision theory labs:  
 **Metric algorithms**
 - [k nearest neighbors](readme/kNN.md)
 - [Weighted k nearest neighbors](readme/WkNN.md)
