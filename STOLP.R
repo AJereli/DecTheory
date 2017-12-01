@@ -87,7 +87,7 @@ DT.STOLP.STOLP = function(points, classes, noises, threshold) {
   return(list(pointsStandards = standards, classesStandards = standards.classes, restPoints = points, restClasses = classes))
 }
 
-mc.draw.STOLP = function(pointsStandards, classesStandards, restPoints, restClasses, colors) {
+DT.drawS = function(pointsStandards, classesStandards, restPoints, restClasses, colors) {
   uniqueClasses = unique(classesStandards)
   names(colors) = uniqueClasses
   
@@ -100,7 +100,7 @@ classes = iris[, 5]
 
 leest = DT.STOLP.STOLP(points, classes, -3, 5)
 
-mc.draw.STOLP(pointsStandards, classesStandards, restPoints, restClasses, c("red", "green3", "blue"))
+DT.drawS(pointsStandards, classesStandards, restPoints, restClasses, c("red", "green3", "blue"))
 
 names(colors) = unique(classesStandards)
 DT.Util.drawMap(pointsStandards, classesStandards, DT.kNN.kNN, 0, kOpt = 6)
