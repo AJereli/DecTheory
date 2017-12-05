@@ -7,7 +7,8 @@ Decision theory labs:
 - [Weighted k nearest neighbors](readme/WkNN.md)
 - [Parzen window](readme/PW.md)
 - [Potential functions](readme/PF.md)
-- [STOLP](readme/STOLP.md)
+- [STOLP](readme/STOLP.md)  
+  [Comparison table](readme/Sum.md)
 
 **Bayesian classification**
 - [Plug-in algorithm](readme/PlugIn.md)
