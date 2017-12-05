@@ -8,3 +8,7 @@ Decision theory labs:
 - [Parzen window](readme/PW.md)
 - [Potential functions](readme/PF.md)
 - [STOLP](readme/STOLP.md)
+
+**Bayesian classification**
+- [Plug-in algorithm](readme/PlugIn.md)
+- [Fisher linear discriminant](readme/FLD.md)
