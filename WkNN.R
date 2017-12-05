@@ -23,4 +23,4 @@ names(DT.Util.colors) = unique(DT.Util.classes)
 plot(DT.Util.petals, bg = DT.Util.colors[DT.Util.classes], pch = 21, asp = 1, xlim = DT.Util.xlim, ylim = DT.Util.ylim, 
      main = "WkNN classifier map")
 
-DT.Util.drawMap(DT.Util.classes, DT.WkNN.WkNN, 0, kOpt)
+DT.Util.drawMap(DT.Util.petals, DT.Util.classes, DT.WkNN.WkNN, 0, kOpt)

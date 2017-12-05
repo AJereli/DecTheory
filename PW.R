@@ -57,4 +57,4 @@ plot(DT.Util.petals, bg = DT.Util.colors[DT.Util.classes], pch = 21, asp = 1.2, 
 
 DT.Util.colors = c(DT.Util.colors, "fail" = "lightblue") #background layer, kinda deprecated since Gauss kernel was found.
 
-DT.Util.drawMap(DT.Util.classes, DT.PW.PW, hOpt)
+DT.Util.drawMap(DT.Util.petals, DT.Util.classes, DT.PW.PW, hOpt)
