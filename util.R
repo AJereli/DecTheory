@@ -57,22 +57,29 @@ DT.Util.LOO = function(points, classes ,classFunc,hLims = 0) {
   return(loo)
 }
 
-DT.Util.drawMap = function(classes,classFunc, hOpt = 0, kOpt = 0) {
+DT.Util.drawMap = function(points, classes, classFunc, hOpt = 0, kOpt = 0, potentials = 0, h = 0 ) {
+  
   for (x in seq(DT.Util.xlim[1], DT.Util.xlim[2], 0.1)) {
   for (y in seq(DT.Util.ylim[1], DT.Util.ylim[2], 0.1)) {
     u = c(round(x, 1), round(y, 1))
     if (any(apply(DT.Util.petals, 1, function(v) all(v == u)))) next
     
-    distances = DT.Util.getDist(DT.Util.petals, u, DT.Util.euclidDist)
-    names(distances) = classes
+    distances = DT.Util.getDist(points, u, DT.Util.euclidDist)
     
     if(identical(classFunc, DT.PW.PW)) {
-      
-      bestClass = DT.PW.PW(distances, classes, hOpt)
-    }  
+      names(distances) = classes
+      bestClass = classFunc(distances, classes, hOpt)
+    }
+    
     else if(identical(classFunc,DT.kNN.kNN) || identical(classFunc,DT.WkNN.WkNN)) {
-      
+      names(distances) = classes
       bestClass = classFunc(sort(distances), kOpt)
+    }
+  
+    else if(identical(classFunc,DT.PF.PF)) {
+      
+      bestClass = classFunc(distances, classes, potentials, h)
+      
     }
     
     points(u[1], u[2], col = DT.Util.colors[bestClass], pch = 21)
