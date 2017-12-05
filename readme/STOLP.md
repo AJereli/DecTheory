@@ -79,7 +79,7 @@ standards.classes = c() #создаём пустой вектор классов
 
 ----
 
-[back to index](../README.md)
+[go to index](../README.md)
 
 
 
