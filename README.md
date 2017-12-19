@@ -11,5 +11,4 @@ Decision theory labs:
   [Comparison table](readme/Sum.md)
 
 **Bayesian classification**
-- [Plug-in algorithm](readme/PlugIn.md)
-- [Fisher linear discriminant](readme/FLD.md)
+- [Bayesian algorithms](readme/PlugIn.md)
