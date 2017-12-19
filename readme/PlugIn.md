@@ -46,11 +46,10 @@
 Из теоремы задания байесовским классификатором квадратичной поверхности получим её уравнение
 ![](https://latex.codecogs.com/gif.latex?%5Clambda_s%20P_sp_s%28x%29%20%3D%20%5Clambda_t%20P_tp_t%28x%29%2C)  
 Логарифмируя, ![](https://latex.codecogs.com/gif.latex?%5Cln%20p_s%28x%29%20-%20%5Cln%20p_t%28x%29%20%3D%20C_%7Bst%7D),![](https://latex.codecogs.com/gif.latex?C_%7Bst%7D%20%3D%20%5Cln%28%5Clambda_tP_t/%5Clambda_sP_s%29) - константа, не зависит от x.
-Осталось вычислить коэффициенты квадратичного дискриминанта, *ln p(x) - квадратичная форма*
+Осталось вычислить коэффициенты квадратичного дискриминанта из двух квадратичных форм ln p(x) : ![](https://latex.codecogs.com/gif.latex?%5Cln%20p_y%28x%29%20%3D%20-%5Cfrac%7Bn%7D%7B2%7D%5Cln2%5Cpi%20-%20%5Cfrac%7B1%7D%7B2%7D%20%5Cln%20%7C%5Csum_y%7C-%5Cfrac%7B1%7D%7B2%7D%28x%20-%20%5Cmu_y%29%5ET%5Csum%5E%7B-1%7D_y%28x-%5Cmu_y%29)
 ```R
-  ## кривая второго порядка: a*x1^2 + b*x1*x2 + c*x2 + d*x1 + e*x2 + f = 0
+# кривая второго порядка: a*x1^2 + b*x1*x2 + c*x2 + d*x1 + e*x2 + f = 0
   invSigma1 <- solve(sigma1)
-  
   invSigma2 <- solve(sigma2)
   f <- log(abs(det(sigma1))) - log(abs(det(sigma2))) +
     mu1 %*% invSigma1 %*% t(mu1) - mu2 %*% invSigma2 %*%
@@ -63,6 +62,5 @@
   d <- -2 * beta[1, 1]
   e <- -2 * beta[2, 1]
   ##решаем проблему возвращения из функции набора параметров передачей их map-ом
-  return (c("x^2" = a, "xy" = b, "y^2" = c, "x" = d, "y"
-            = e, "1" = f))
+  return (c("x^2" = a, "xy" = b, "y^2" = c, "x" = d, "y" = e, "1" = f))
 ```
