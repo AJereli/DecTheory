@@ -49,18 +49,26 @@
 Осталось вычислить коэффициенты квадратичного дискриминанта из двух квадратичных форм ln p(x) : ![](https://latex.codecogs.com/gif.latex?%5Cln%20p_y%28x%29%20%3D%20-%5Cfrac%7Bn%7D%7B2%7D%5Cln2%5Cpi%20-%20%5Cfrac%7B1%7D%7B2%7D%20%5Cln%20%7C%5Csum_y%7C-%5Cfrac%7B1%7D%7B2%7D%28x%20-%20%5Cmu_y%29%5ET%5Csum%5E%7B-1%7D_y%28x-%5Cmu_y%29)
 ```R
 # кривая второго порядка: a*x1^2 + b*x1*x2 + c*x2 + d*x1 + e*x2 + f = 0
-  invSigma1 <- solve(sigma1)
+  invSigma1 <- solve(sigma1)#обратные матрицы
   invSigma2 <- solve(sigma2)
   f <- log(abs(det(sigma1))) - log(abs(det(sigma2))) +
     mu1 %*% invSigma1 %*% t(mu1) - mu2 %*% invSigma2 %*%
     t(mu2);
   alpha <- invSigma1 - invSigma2
-  a <- alpha[1, 1]
-  b <- 2 * alpha[1, 2]
+  a <- alpha[1, 1] #коэффициент - элемент матрицы
+  b <- 2 * alpha[1, 2]#полученный вычитанием обратных матриц
   c <- alpha[2, 2]
   beta <- invSigma1 %*% t(mu1) - invSigma2 %*% t(mu2)
-  d <- -2 * beta[1, 1]
+  d <- -2 * beta[1, 1]#всё выводится из квадратичной формы
   e <- -2 * beta[2, 1]
   ##решаем проблему возвращения из функции набора параметров передачей их map-ом
   return (c("x^2" = a, "xy" = b, "y^2" = c, "x" = d, "y" = e, "1" = f))
 ```
+**Результаты**
+
+<figure>
+ <img src="pics/plug1.png" width="500">
+ <img src="pics/plug2.png" width="500">
+  <figcaption>Признаки некореллированы - линии уровня плотности эллипсоидные, 
+    с центром mu, оси параллельны ox/oy.</figcaption>
+</figure>
