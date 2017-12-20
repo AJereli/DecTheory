@@ -68,7 +68,9 @@
 
 <figure>
  <img src="pics/plug1.png" width="500">
-<img src="pics/plug2.png" width="500">
+ <img src="pics/plug2.png" width="500">
+ <img src="pics/NDAEllips.png" width="500">
+ <img src="pics/NDA2Lines.png" width="500">
   <figcaption>Признаки некореллированы - линии уровня плотности эллипсоидные, 
     с центром mu, оси параллельны ox/oy.</figcaption>
 </figure>
