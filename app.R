@@ -2,7 +2,7 @@ library(shiny)
 library(MASS)
 
 # set normalizing
-LC.normalize = function(xl) {
+LC.normal = function(xl) {
   cols = dim(xl)[2]
   for (i in 1:(cols - 1)) {
     xl[, i] = (xl[, i] - mean(xl[, i])) / sd(xl[, i])
@@ -12,7 +12,7 @@ LC.normalize = function(xl) {
 }
 
 # add w0 = -1
-LC.prepare = function(xl) {
+LC.prep = function(xl) {
   rows = dim(xl)[1]
   cols = dim(xl)[2]
   xl = cbind(xl[, 1:(cols - 1)], rep(-1, rows), xl[, cols])
@@ -160,8 +160,8 @@ server = function(input, output) {
     xl = rbind(cbind(xy1, -1), cbind(xy2, +1))
     
     #Data normalization
-    xl = LC.normalize(xl)
-    xl = LC.prepare(xl)
+    xl = LC.normal(xl)
+    xl = LC.prep(xl)
     drawPoints(xl)
     
     # division line ploting
