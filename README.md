@@ -15,3 +15,4 @@ Decision theory labs:
 
 **Linear classification**
 - [Linear algorithms](readme/Linear.md)
+TODO: Shiny host.
