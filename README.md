@@ -12,3 +12,6 @@ Decision theory labs:
 
 **Bayesian classification**
 - [Bayesian algorithms](readme/PlugIn.md)
+
+**Linear classification**
+- [Linear algorithms](readme/linear.md)
