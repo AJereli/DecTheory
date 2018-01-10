@@ -14,4 +14,4 @@ Decision theory labs:
 - [Bayesian algorithms](readme/PlugIn.md)
 
 **Linear classification**
-- [Linear algorithms](readme/linear.md)
+- [Linear algorithms](readme/Linear.md)
